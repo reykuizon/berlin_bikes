@@ -1,0 +1,47 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.site_footer {
+  background-color: orange;
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  
+ 
+}
+
+.main_image {
+  padding-top: 80px;
+  position: relative;
+}
+
+.img_quote_index {
+   padding-top: 80px;
+}
+
+
+body, 
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.header {
+  margin-top: 60px;
+}
+
+
+.contact_details{
+  font-family: verdana, Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+
+}

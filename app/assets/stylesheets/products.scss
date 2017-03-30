@@ -1,0 +1,39 @@
+/*// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+// SET STYLING TABLE, ROW & HEADING 
+table, th, td{
+  border: 1px solid black;
+  font-family: arial, sans-serif;
+}
+
+// TABLE STYLING
+table {
+  width: 100%;
+  text-align: center;
+}
+
+// FOR TABLE ROW STYLING
+tr {
+  background-color:lightgrey;
+  text-align: left;
+}
+
+
+// EVEN NUMBER OF TABLE ROW STYLING
+tr:nth-child(even) {
+  background-color: white;
+}
+
+// TABLE HEADING STYLING
+th {
+  text-align: center;
+  background-color: orange;
+}
+
+// PRODUCT HEADER STYLLING
+.product_header {
+  margin-top: 60px;
+}

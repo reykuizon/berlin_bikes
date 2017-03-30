@@ -1,0 +1,9 @@
+<div class="container">
+  <%#PRODUCT HEADER%>
+  <h1 class="product_header">Edit Product</h1>
+  
+  <%#LINK TO OTHER CONTROLLERS%>
+  <%= render 'form', product: @product %>
+  <%= link_to 'Show', @product %> |
+  <%= link_to 'Back', products_path %>
+</div>
