@@ -1,32 +1,19 @@
 <p id="notice"><%= notice %></p>
 <h1 class="product_header container">Products</h1>
 <div class="container">
-    <table>
-      <thead>
-        <tr>
-          <th> Name </th>
-          <th> Description </th>
-          <th> Image URL </th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @products.each do |product| %>
-          <tr>
-            <td><%= product.name %></td>
-            <td><%= product.description %></td>
-            <td><%= product.image_url %></td>
-            <td><%= link_to 'Show', product %></td>
-            <td><%= link_to 'Edit', edit_product_path(product) %></td>
-            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <% @products.each do |product| %>
+      <div class="col-sm-2 col-md-4">
+        <%= product.name %> <br>
+        <%= product.description %><br>
+        <%= product.image_url %>
+        <%= product.colour %>
+        <%= product.price %> <br>
+      </div><!-- /col -->
+    <% end %>
+    <br>
   <%= link_to 'Add New Product', new_product_path %>
 </div>
-<br>
+
 
 
 

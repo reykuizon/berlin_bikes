@@ -21,6 +21,17 @@
     <%= @product.image_url %>
   </p>
 
+  <%#DISPLAY NEW ADDED COLOR%>
+  <p>
+    <strong>Colour:</strong>
+    <%= @product.colour %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %>
+  </p>
+
   <%#LINK TO OTHER PRODUCT CONTROLLER%>
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>
