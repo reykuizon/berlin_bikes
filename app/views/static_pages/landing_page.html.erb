@@ -1,0 +1,10 @@
+<div class="container"> 
+  <h1 class="header">Featured Product:</h1>
+  <div class="col-sm-6 col-md-4 products">
+    <span class="product_name"> <%= @featured_product.name %><br> </span>
+    <%= image_tag(@featured_product.image_url, class: "img-responsive") %>
+    <%= @featured_product.description %> <br>
+    <%= @featured_product.colour %> <br>
+    <%= @featured_product.price %> <br>
+  </div>
+</div>
