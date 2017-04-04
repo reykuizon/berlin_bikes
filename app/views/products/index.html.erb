@@ -1,23 +1,26 @@
 <div class="wrapper">
-<p id="notice"><%= notice %></p>
-<h1 class="product_header container">Products</h1>
-<div class="container">
-  <div class="row">
+  <p id="notice"><%= notice %></p>
+  <h1 class="product_header container">Products</h1> 
+  <div class="container"><%= link_to 'Add New Product', new_product_path %></div>
+  <div class="container">
+    
     <% @products.each do |product| %>
-      <div class="col-sm-6 col-md-4 products">
-       <span class = "product_name"> <%= product.name %> </span> <br>
-        <%= image_tag(product.image_url, class: "img-responsive") %>
-        <%= product.description %> <br>
-        <%#<%= product.image_url %> 
-        <%= product.colour %> <br>
-        <%= product.price %> <br>
-        <%= link_to 'Edit', edit_product_path(product) %>
-        <%= link_to 'Show', product %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 products">
+          <%= image_tag(product.image_url, class: "img-responsive") %>
+        </div>  
+        <div class="col-sx-12 col-sm-6 products">
+          <span class = "product_name"> <%= product.name %> </span> <br>
+          <%= product.description %> <br>
+          <%= product.colour %> <br>
+          <%= product.price %> <br>
+          <%= link_to 'Edit', edit_product_path(product) %>
+          <%= link_to 'Show', product %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
-    <% end %>
-  </div>
-</div> <br> 
-<div class="container"><%= link_to 'Add New Product', new_product_path %></div>
-
+    <% end %> <br><br>
+    
+  </div> 
+  
 </div>
