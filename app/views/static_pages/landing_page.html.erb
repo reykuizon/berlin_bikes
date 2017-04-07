@@ -1,10 +1,43 @@
-<div class="container"> 
+<%#DISPLAY FEATURED PRODUCT USING 1ST DATA IN DB%>
+<%#<div class="container"> 
   <h1 class="header">Featured Product:</h1>
   <div class="col-sm-6 col-md-4 products">
-    <span class="product_name"> <%= @featured_product.name %><br> </span>
-    <%= image_tag(@featured_product.image_url, class: "img-responsive") %>
-    <%= @featured_product.description %> <br>
-    <%= @featured_product.colour %> <br>
-    <%= @featured_product.price %> <br>
-  </div>
+    <%#<span class="product_name"> <%= @featured_product.name %>
+    <%#= image_tag(@featured_product.image_url, class: "img-responsive") %>
+    <%#= @featured_product.description %> 
+    <%#= @featured_product.colour %> 
+    <%#= @featured_product.price %> 
+  <%#</div>
+</div>%>
+
+
+<div id="carousel-example-generic" class="carousel slide container-fluid" data-ride="carousel">			
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li> 
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li> 
+  </ol>
+	<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+  <% @products.each do |product| %>
+    <div class="item <%= " active" if product == @products.first %>">
+      <%= image_tag(product.image_url,class:"img-responsive img_slide") %>
+      <div class="carousel-caption">
+        <%= product.name %>
+      </div>
+    </div>
+  <% end %>
 </div>
+ outside image corousel
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+last
