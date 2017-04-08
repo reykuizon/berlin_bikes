@@ -13,23 +13,27 @@
 
 <div id="carousel-example-generic" class="carousel slide container-fluid" data-ride="carousel">
 
-  <% @products.each_with_index do |product, index| %>
-
+  
     <!-- Indicators -->
     <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="#{index}" class="#{"active" if index == 0}"></li>
+      <% @products.each_with_index do |product, index| %>
+        <li data-target="#carousel-example-generic" data-slide-to="#{index}" class="#{"active" if index == 0}"></li>
+       <% end %>
     </ol>
+ 
 
   	<!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+      <% @products.each do |product| %>
         <div class="item <%= " active" if product == @products.first %>">
-          <%= image_tag(product.image_url,class:"img-responsive img_slide") %>
+          <%= image_tag(product.image_url, class:"img-responsive img_slide") %>
           <div class="carousel-caption">
             <%= product.name %>
           </div>
         </div>
+      <% end %>
     </div>
- <% end %>
+
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
