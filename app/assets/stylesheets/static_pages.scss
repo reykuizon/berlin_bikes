@@ -48,12 +48,25 @@ html {
 }
 
 .carousel-caption {
-  color: red;
-  font-size: 2em;
-  top: 248px;
+  color: black;
+  font-size: 4em;
+  top: 300px;
   text-align: center;
 }
 
 .img_slide{
   margin: auto;
+}
+
+.carousel-indicators {
+  height: 20px;
+  top: 400px
+}
+
+.carousel-inner {
+  height: 500px;
+}
+
+.carousel-indicators li{
+  background-color: gray;
 }
