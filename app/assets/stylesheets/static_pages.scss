@@ -2,25 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// SITE FOOTER
 .site_footer {
   background-color: orange;
-  height: 40px;
+  height: 30px;
   width: 100%;
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
+  position: absolute;
 }
 
+// MAING DISPLAY IMAGE IN HOME PAGE
 .main_image {
   padding-top: 80px;
   position: relative;
 }
 
+// IMAGE QOUTE
 .img_quote_index {
    padding-top: 80px;
 }
 
-
+// BODY & HTML
 body,
 html {
   margin: 0;
@@ -28,26 +29,30 @@ html {
   height: 100%;
 }
 
-#wrapper {
-  min-height: 100%;
-  position: absolute;
+// WRAPPER TO POSITION THE FOOTER
+.wrapper {
+  min-height: 97%;
+  overflow: hidden;
 }
 
+// HEADER TEXT
 .header {
   margin-top: 60px;
 }
 
-
+// CONTACT DETAILS
 .contact_details{
   font-family: verdana, Arial, Helvetica, sans-serif;
   font-size: 1.5em;
 }
 
+// IMAGE COROUSEL
 .carousel-inner{
   margin-top: 60px;
   height: 400px;
 }
 
+// COROUSEL CAPTION
 .carousel-caption {
   color: black;
   font-size: 4em;
@@ -55,15 +60,18 @@ html {
   text-align: center;
 }
 
+// IMAGE SLIDE IN COUROSEL
 .img_slide{
   margin: auto;
 }
 
+// COROUSEL INDICATOR
 .carousel-indicators {
   height: 20px;
   top: 400px
 }
 
+// COROUSEL LI INDICATOR
 .carousel-indicators li{
   background-color: gray;
 }
