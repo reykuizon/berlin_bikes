@@ -1,17 +1,28 @@
-<div class="wrapper">
-  <p id="notice"><%= notice %></p>
-  <h1 class="product_header container">Orders</h1> 
-  <div class="container">
-    
-    <% @orders.each do |order| %>
-      <div class="row">
+<p id="notice"><%= notice %></p>
+<h1 class="product_header container">Orders</h1>
+<div class="container">
+  <!-- ORDER  LOPP -->
+  <% @orders.each do |order| %>
+    <!-- PRODUCT LOOP -->
+    <% @products.each do |product| %>
+      <!-- SEARCH ORDER PRODUCT ID ON PRODCUT DB -->
+      <% if order.product_id == product.id %>
+      <div class="row order_row">
         <div class="col-xs-12 col-sm-6 products">
-          Product ID: <%= order.product_id %> <br>  
-          Total: <%= order.total%>
-        </div>     
+          <!-- PRODUCT & ORDER DETAILS -->
+          Order Id: <%= order.id%> <br>
+          Product Id: <%= order.product_id %> <br>
+          Product Name: <%= product.name %> <br>
+          Product Color: <%= product.colour %> <br>
+          Price: $<%= product.price%> <br>
+          <span class="total" >Total: $<%= order.total%> </span><br>
+        </div>
+        <div class="col-xs-12 col-sm-6 products">
+           <%= image_tag(product.image_url, class: "img-responsive") %>
+        </div>
       </div>
-    <% end %> <br><br>
-    
-  </div> 
-  
-</div>
+      <% end %> <!--END IF-->
+    <% end %> <!--END PRODUCT-->
+  <% end %> <!--END ORDER-->
+  <br><br>
+</div> <!--END CONTAINER-->
