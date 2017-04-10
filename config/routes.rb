@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 
   get 'static_pages/landing_page'
 
+  get '/products/:id', to: 'products#show'
+
   # root 'static_pages#index'
 
-  root 'static_pages#landing_page'
+  # root 'static_pages#landing_page'
   
-  # root 'products#index'
+  root 'products#index'
   
   # root 'orders#index'
   resources :orders, only: [:index, :show, :create, :destroy]
