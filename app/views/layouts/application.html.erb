@@ -33,8 +33,8 @@
           </ul>
           <%# SEARCH BAR %>
           <%= form_tag("/products", method: "get", class:"navbar-form nav-left search_form", role:"search") do %>
-            <%= label_tag(:q,"") %>
-            <%= text_field_tag(:q, placeholder= "Search...") %>
+            <%= label_tag(:q, "") %>
+            <%= text_field_tag(:q,nil, class: "", placeholder: "Search...") %>
             <%= submit_tag("Search") %>
           <% end %>
         </div>
