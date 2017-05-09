@@ -12,6 +12,7 @@
 
   </head>
   <body>
+   
     <%#--- NAVIGATION BAR ---%>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid headerBar">
@@ -50,12 +51,15 @@
       
       </div>
     </nav>
-
+  <%#Flash Notice%>
+    <%#<p class="notice"> <%= notice %>
+    <%#<p class="alert"> <%= alert %>
   <!-- Wrapper to setup footer at the bottom -->
+  <%= render 'layouts/messages' %>
   <div class="wrapper">
     <%= yield %>
   </div>
-
+ 
   <%#--- FOOTER ---%>
   <footer class="site_footer">
     &copy; 2017 Bike Berlin 
