@@ -1,6 +1,10 @@
-<h1>Editing User</h1>
+<div class="container">
+<h1 class="header">Editing User</h1>
 
 <%= render 'form', user: @user %>
 
 <%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> |
+<%= link_to 'Edit Email/Password', edit_user_registration_path %>
+
+</div>
