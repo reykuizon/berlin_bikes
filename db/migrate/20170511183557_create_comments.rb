@@ -5,6 +5,10 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.text :body
       t.integer :rating
       t.references :product, foreign_key: true
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e382774853971226f5fb3501a3cd92bf87d0bbd
       t.timestamps
     end
   end
