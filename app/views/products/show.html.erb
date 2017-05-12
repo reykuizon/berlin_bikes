@@ -3,39 +3,26 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 products">
-<<<<<<< HEAD
       <%= image_tag(@product.image_url, class: "img-responsive thumbnail") %>
-=======
-      <%= image_tag(@product.image_url, class: "img-responsive") %>
->>>>>>> 7e382774853971226f5fb3501a3cd92bf87d0bbd
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
     </div>
     <div class="col-xs-12 col-sm-6 products">
       <h1><%= @product.name %></h1>
-<<<<<<< HEAD
-   
       <%= @product.description %> <br> <br> 
       <strong>Colour:</strong>
       <%= @product.colour%> <br> <br>
       <strong>Price: $</strong>
-=======
       <strong>Description:</strong><br>
       <%= @product.description %> <br>
       <strong>Colour:</strong>
       <%= @product.colour%> <br>
       <strong>Price:</strong>
->>>>>>> 7e382774853971226f5fb3501a3cd92bf87d0bbd
       <%= @product.price %> <br>
     </div>
   </div>
-  
   <hr>
-<<<<<<< HEAD
-
-  
   <%#SCOPE COMMENTS METHOD%>
-  
    <p> 
    <%= @product.comments.rating_desc.pluck(:body).join(", ") %> <br>
    <%= @product.comments.rating_asc.pluck(:body).join(", ") %> 
@@ -46,11 +33,4 @@
    <%= @product.highest_rating_comment %> <br>
    <%= @product.lowest_rating_comment %>
    </p>
-
-  
-
-=======
-  <%#SCOPE METHOD%>
-  <%= @product.comments.rating_desc.first %>
->>>>>>> 7e382774853971226f5fb3501a3cd92bf87d0bbd
 </div>
