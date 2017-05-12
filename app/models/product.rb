@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :orders
+  has_many :comments
 
   def self.search(search_term)
     if Rails.env.development?
@@ -9,4 +10,11 @@ class Product < ApplicationRecord
     end
   end
   
+  def highest_rating_comment
+    comments.rating_desc.pluck(:body).first
+  end
+
+  def lowest_rating_comment
+    comments.rating_asc.pluck(:body).first
+  end
 end
