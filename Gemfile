@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # Devise for User authentication
 gem 'devise'
 
+gem 'cancancan', '~> 1.10'
+
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
