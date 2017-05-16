@@ -28,4 +28,10 @@
    <%= @product.highest_rating_comment %> <br>
    <%= @product.lowest_rating_comment %>
    </p>
+
+   <%#ADD REVIEW%>
+    <%= render 'new_comments', comment: @product %>
+
+    <%#DISPLAY PRODUCT COMMENTS%>
+    <%= render 'comments', comment: @product %>
 </div>

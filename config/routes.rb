@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users
-  resources :products
+  
+  # NESTED RESOURCES FOR COMMENTS
+  resources :products do
+    resources :comments 
+  end
+  
 
   get 'static_pages/contact'
 

@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
+    
   </head>
   <body>
    
@@ -63,10 +63,11 @@
   <% if alert %>
     <%= render 'layouts/alert' %>
   <% end %>
+ 
   <div class="wrapper">
     <%= yield %>
   </div>
- 
+  <div class="rating"> test</div>
   <%#--- FOOTER ---%>
   <footer class="site_footer">
     &copy; 2017 Bike Berlin 
@@ -75,5 +76,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Bootstrap core JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   </body>
 </html>
