@@ -2,36 +2,30 @@
 <br>
 <div class="container">
   <div class="row">
+  
     <div class="col-xs-12 col-sm-6 products">
+      <%#DISPLAY PRODUCT IMAGE%>
       <%= image_tag(@product.image_url, class: "img-responsive thumbnail") %>
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
     </div>
+
     <div class="col-xs-12 col-sm-6 products">
+      <%#DISPLAY PRODUCT INFO%>
       <h1><%= @product.name %></h1>
       <%= @product.description %> <br> <br> 
       <strong>Colour:</strong>
       <%= @product.colour%> <br> <br>
       <strong>Price: $</strong>
-      <%= @product.price %> <br>
+      <%= @product.price %> <br> <br>
+      <%#DISPAY AVERAGE RATING%>
+      <strong>Average Rating:</strong> <br> <br>
+      <div class="rated" data-score="<%= @product.average_rating %>"></div>
     </div>
-  </div>
+  </div> <%#END ROW%>
   <hr>
-  <%#SCOPE COMMENTS METHOD%>
-   <p> 
-   <%= @product.comments.rating_desc.pluck(:body).join(", ") %> <br>
-   <%= @product.comments.rating_asc.pluck(:body).join(", ") %> 
-   </p>
-
-   <%#CUSTOM METHOD%>
-   <p>
-   <%= @product.highest_rating_comment %> <br>
-   <%= @product.lowest_rating_comment %>
-   </p>
-
    <%#ADD REVIEW%>
     <%= render 'new_comments', comment: @product %>
-
     <%#DISPLAY PRODUCT COMMENTS%>
     <%= render 'comments', comment: @product %>
-</div>
+</div><%#END CONTAINER %>

@@ -21,6 +21,10 @@ class Product < ApplicationRecord
     comments.rating_asc.pluck(:body).first
   end
 
+  # GET THE PRODUCT AVERAGE RATING
+  def average_rating
+    comments.average(:rating).to_f
+  end
  
 
 end

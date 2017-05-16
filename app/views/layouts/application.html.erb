@@ -53,27 +53,25 @@
       
       </div>
     </nav>
-  <%#Flash Notice%>
-    <%#<p class="notice"> <%= notice %>
-    <%#<p class="alert"> <%= alert %>
-  <!-- Wrapper to setup footer at the bottom -->
+
+  <%#NOTICE & ALERTS%>
   <% if notice %>
     <%= render 'layouts/notice' %>
   <% end %>
   <% if alert %>
     <%= render 'layouts/alert' %>
   <% end %>
- 
+    
+  <!-- Wrapper to setup footer at the bottom -->
   <div class="wrapper">
     <%= yield %>
   </div>
-  <div class="rating"> test</div>
+  
   <%#--- FOOTER ---%>
   <footer class="site_footer">
     &copy; 2017 Bike Berlin 
   </footer>
-     <!-- JavaScript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
   <!-- Bootstrap core JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
