@@ -29,5 +29,5 @@
     <%#DISPLAY PRODUCT COMMENTS%>
     <%= render 'comments', comment: @product %>
 
-    
+    <%= will_paginate @comments %>
 </div><%#END CONTAINER %>
