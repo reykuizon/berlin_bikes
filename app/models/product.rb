@@ -2,6 +2,14 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :comments
 
+  # VALIDATE PRODUCT NAME
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :image_url, presence: true
+  validates :colour, presence: true
+  validates :price, numericality: true
+
+
   # SEARCH BOX
   def self.search(search_term)
     if Rails.env.development?
