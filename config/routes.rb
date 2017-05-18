@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "user_registration" }
   resources :users
   
+
   # NESTED RESOURCES FOR COMMENTS
   resources :products do
     resources :comments 
