@@ -10,10 +10,14 @@ def index
   else
     @products = Product.all
   end
+
+   
 end
   # GET /products/1
   # GET /products/1.json
   def show
+     @comments = @product.comments.order("created_at DESC")
+     @comments = @product.comments.all.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /products/new
@@ -28,6 +32,8 @@ end
   # POST /products
   # POST /products.json
   def create
+  
+    
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -40,6 +46,7 @@ end
       end
     end
   end
+
 
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json

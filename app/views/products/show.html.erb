@@ -2,23 +2,32 @@
 <br>
 <div class="container">
   <div class="row">
+  
     <div class="col-xs-12 col-sm-6 products">
-      <%= image_tag(@product.image_url, class: "img-responsive") %>
+      <%#DISPLAY PRODUCT IMAGE%>
+      <%= image_tag(@product.image_url, class: "img-responsive thumbnail") %>
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
     </div>
+
     <div class="col-xs-12 col-sm-6 products">
+      <%#DISPLAY PRODUCT INFO%>
       <h1><%= @product.name %></h1>
-      <strong>Description:</strong><br>
-      <%= @product.description %> <br>
+      <%= @product.description %> <br> <br> 
       <strong>Colour:</strong>
-      <%= @product.colour%> <br>
-      <strong>Price:</strong>
-      <%= @product.price %> <br>
+      <%= @product.colour%> <br> <br>
+      <strong>Price: $</strong>
+      <%= @product.price %> <br> <br>
+      <%#DISPAY AVERAGE RATING%>
+      <strong>Average Rating:</strong> <br> <br>
+      <div class="rated" data-score="<%= @product.average_rating %>"></div>
     </div>
-  </div>
-  
+  </div> <%#END ROW%>
   <hr>
-  <%#SCOPE METHOD%>
-  <%= @product.comments.rating_desc.first %>
-</div>
+   <%#ADD REVIEW%>
+    <%= render 'new_comments', comment: @product %>
+    <%#DISPLAY PRODUCT COMMENTS%>
+    <%= render 'comments', comment: @product %>
+
+    <%= will_paginate @comments %>
+</div><%#END CONTAINER %>
