@@ -4,10 +4,10 @@ class Product < ApplicationRecord
 
   # VALIDATE PRODUCT NAME
   validates :name, presence: true
-  validates :description, presence: true
-  validates :image_url, presence: true
-  validates :colour, presence: true
-  validates :price, numericality: true
+  # validates :description, presence: true
+  # validates :image_url, presence: true
+  # validates :colour, presence: true
+  # validates :price, numericality: true
 
 
   # SEARCH BOX
