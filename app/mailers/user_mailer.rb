@@ -2,7 +2,7 @@ class UserMailer < ApplicationMailer
   default from: 'email@berlinbikeshop.com'
 
   def contact_form(email, name, message)
-  @message = message
+  @message = message
     mail(:from =>email,
       :to => 'reykuizon83@gmail.com',
       :subject => "A new contact form message from #{name}",
