@@ -39,6 +39,8 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.10'
 
+gem 'rails-controller-testing'
+
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
