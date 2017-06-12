@@ -39,6 +39,8 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.10'
 
+gem 'rails-controller-testing'
+
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -59,6 +61,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :production do
