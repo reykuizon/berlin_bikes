@@ -15,4 +15,16 @@ class ApplicationController < ActionController::Base
   redirect_to main_app.root_url, :alert => exception.message
   end
 
+  before_action :require_login
+
+  private
+  def require_login
+    unless current_user
+      redirect_to(new_user_session_url)
+    end
+    
+  end
+
+
+
 end
