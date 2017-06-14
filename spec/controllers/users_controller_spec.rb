@@ -19,6 +19,17 @@ describe UsersController do
         expect(response).to have_http_status(200)
         expect(assigns(:user)).to eq user1
       end
+
+      context "User cannot see other user page" do
+        before do
+          sign_in user2 
+        end
+      it "redirect to root path" do
+        get :show, params: {id: user2.id}
+        expect(assigns(:user)).to eq user2
+        expect(response).to redirect_to(root_path)
+      end 
+      end
     end
     
     context "when a user is not logged in" do  
@@ -28,16 +39,7 @@ describe UsersController do
       end
     end
 
-    context "User cannot see other user page" do
-      before do
-        sign_in user2 
-      end
-      it "redirect to root path" do
-        get :show, params: {id: user2.id}
-        expect(assigns(:user)).to eq user2
-        expect(response).to redirect_to(root_path)
-      end 
-    end
+    
     
   end
 
