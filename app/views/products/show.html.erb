@@ -2,7 +2,6 @@
 <br>
 <div class="container">
   <div class="row">
-  
     <div class="col-xs-12 col-sm-6 products">
       <%#DISPLAY PRODUCT IMAGE%>
       <%= image_tag(@product.image_url, class: "img-responsive thumbnail") %>
@@ -10,7 +9,7 @@
       <%= link_to 'Back', products_path %>
     </div>
 
-    <div class="col-xs-12 col-sm-6 products">
+    <div class="col-xs-12 col-sm-6 products">  
       <%#DISPLAY PRODUCT INFO%>
       <h1><%= @product.name %></h1>
       <%= @product.description %> <br> <br> 
@@ -18,14 +17,23 @@
       <%= @product.colour%> <br> <br>
       <strong>Price: $</strong>
       <%= @product.price %> <br> <br>
+      
       <%#DISPAY AVERAGE RATING%>
       <strong>Average Rating:</strong> <br> <br>
       <div class="rated" data-score="<%= @product.average_rating %>"></div>
+      <br><br>
+      <%#<%DISPLAY BUY BUTTON%>
+      <%= form_tag 'payments/create' do %>
+        <%= render partial: 'shared/stripe_checkout_button'%>
+      <% end %>
+      
     </div>
+    
   </div> <%#END ROW%>
-  <hr>
-   <%#ADD REVIEW%>
+  
+    <%#ADD REVIEW%>
     <%= render 'new_comments', comment: @product %>
+
     <%#DISPLAY PRODUCT COMMENTS%>
     <%= render 'comments', comment: @product %>
 
