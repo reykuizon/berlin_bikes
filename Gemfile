@@ -39,6 +39,8 @@ gem 'devise'
 
 gem 'cancancan', '~> 1.10'
 
+gem 'rails-controller-testing'
+
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,9 +58,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'stripe'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :production do

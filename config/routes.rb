@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "user_registration" }
   resources :users
   
+
   # NESTED RESOURCES FOR COMMENTS
   resources :products do
     resources :comments 
@@ -20,11 +21,11 @@ Rails.application.routes.draw do
 
   post '/static_pages/thank_you'
 
-  root 'static_pages#index'
+  # root 'static_pages#index'
 
   # root 'static_pages#landing_page'
 
-  # root 'products#index'
+  root 'products#index'
 
   # root 'orders#index'
   resources :orders, only: [:index, :show, :create, :destroy]
