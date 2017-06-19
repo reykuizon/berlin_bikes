@@ -69,5 +69,5 @@ end
 
 group :production do
   gem 'pg'
-  gem 'byebug', platform: [:mri, :mingw, :x64_mingw]
+ 
 end
