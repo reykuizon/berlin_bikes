@@ -10,6 +10,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-6 products">  
+      
       <%#DISPLAY PRODUCT INFO%>
       <h1><%= @product.name %></h1>
       <%= @product.description %> <br> <br> 
@@ -22,8 +23,10 @@
       <strong>Average Rating:</strong> <br> <br>
       <div class="rated" data-score="<%= @product.average_rating %>"></div>
       <br><br>
-      <%#<%DISPLAY BUY BUTTON%>
-      <%= form_tag '/payments/create' do %>
+
+
+      <%#RENDER BUY BUTTON%>
+      <%= form_tag 'payments/create' do %>
         <%= render partial: 'shared/stripe_checkout_button'%>
       <% end %>
       
@@ -37,5 +40,10 @@
     <%#DISPLAY PRODUCT COMMENTS%>
     <%= render 'comments', comment: @product %>
 
+    <%#PAGINATE COMMENTS%>
     <%= will_paginate @comments %>
+    
 </div><%#END CONTAINER %>
+
+
+
