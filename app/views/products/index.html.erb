@@ -1,10 +1,11 @@
 
   <p id="notice"><%= notice %></p>
   <h1 class="product_header container">Products</h1> 
-  <div class="container"><%= link_to 'Add New Product', new_product_path %></div>
-  <div class="container">
 
+  <% if current_user && current_user.admin?%>
+    <div class="container"><%= link_to 'Add New Product', new_product_path %></div>
+  <%end%>
+  <div class="container">
   <%#RENDER FROM PARTIAL FILE _PRODUCT%>
-  <%#= render @products %>
   <%= render 'products', product: @product %>
   </div> 
