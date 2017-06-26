@@ -7,7 +7,7 @@
       <%= image_tag(@product.image_url, class: "img-responsive thumbnail img-zoom", data_zoom_image: @product.image_url ) %>
 
       <% if current_user && current_user.admin?%>
-      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default" %>
       <%end%>
       
       <%= link_to 'Back', products_path, class: "btn btn-default" %>
@@ -24,7 +24,7 @@
       
       <%#DISPAY AVERAGE RATING%>
       <strong>Average Rating:</strong> <br> <br>
-      <div class="rated" data-score="<%= @product.average_rating %>"></div>
+      <div id ="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
       <br><br>
 
 
