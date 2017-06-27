@@ -5,7 +5,15 @@
   <% if current_user && current_user.admin?%>
     <div class="container"><%= link_to 'Add New Product', new_product_path %></div>
   <%end%>
+
   <div class="container">
+
   <%#RENDER FROM PARTIAL FILE _PRODUCT%>
-  <%= render 'products', product: @product %>
-  </div> 
+   <%#=render 'products', product: @product %>
+  
+  <%#RUSSIAN DOLL CACHING%>
+  <% cache(cache_key_for_products) do %>
+    <%= render @products %>
+  <% end %>
+
+</div> 

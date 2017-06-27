@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# gem dalli for automatic whole site caching
+gem 'dalli'
+
 # Devise for User authentication
 gem 'devise'
 
