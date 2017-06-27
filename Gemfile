@@ -41,6 +41,9 @@ gem 'dalli'
 # Devise for User authentication
 gem 'devise'
 
+# Redis advance key-value store
+gem 'redis-rails'
+
 gem 'cancancan', '~> 1.10'
 
 gem 'rails-controller-testing'
