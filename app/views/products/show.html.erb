@@ -41,7 +41,10 @@
     <%= render 'new_comments', comment: @product %>
 
     <%#DISPLAY PRODUCT COMMENTS%>
+    <div class="alert alert-info" style="display:none" role="alert"> A new comment was posted! </div>
     <%= render 'comments', comment: @product %>
 
+    <%#PAGINATE COMMENTS%>
     <%= will_paginate @comments %>
+    
 </div><%#END CONTAINER %>
