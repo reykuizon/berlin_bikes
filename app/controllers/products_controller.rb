@@ -18,8 +18,7 @@ end
   # GET /products/1
   # GET /products/1.json
   def show
-     @comments = @product.comments.order("created_at DESC")
-     @comments = @product.comments.all.paginate(page: params[:page], per_page: 3)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], per_page: 3)
   end
 
   # GET /products/new
@@ -34,8 +33,7 @@ end
   # POST /products
   # POST /products.json
   def create
-
-    
+ 
     @product = Product.new(product_params)
 
     respond_to do |format|
