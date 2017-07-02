@@ -1,26 +1,26 @@
 <h1 class="product_header container">Orders</h1>
 <div class="container">
-  <!-- ORDER  LOPP -->
-  <% @orders.each do |order| %>
-    <!-- PRODUCT LOOP -->
-    <% @products.each do |product| %>
-      <!-- SEARCH ORDER PRODUCT ID ON PRODCUT DB -->
-      <% if order.product_id == product.id %>
-      <div class="row order_row">
-        <div class="col-xs-12 col-sm-6 products">
-          <!-- PRODUCT & ORDER DETAILS -->
-          Order Id: <%= order.id%> <br>
-          Product Id: <%= order.product_id %> <br>
-          Product Name: <%= product.name %> <br>
-          Product Color: <%= product.colour %> <br>
-          <span class="total" >Total: $<%= product.price%> </span><br>
-        </div>
-        <div class="col-xs-12 col-sm-6 products">
-           <%= image_tag(product.image_url, class: "img-responsive") %>
-        </div>
-      </div>
-      <% end %> <!--END IF-->
-    <% end %> <!--END PRODUCT-->
-  <% end %> <!--END ORDER-->
-  <br><br>
+ <% @users.each do |user|%>
+  <% @orders.each do |order|%>
+    <% if user.id == current_user.id && current_user.id == order.user_id%>
+      <% @products.each do |product|%>
+        <% if order.product_id == product.id%>
+          <%#PRODUCT ORDER DETAILS%>
+          <div class="row order_row">
+            <div class="col-xs-12 col-sm-6 products">
+              Order Id: <%= order.id%> <br>
+              Product Id: <%= order.product_id %> <br>
+              Product Name: <%= product.name %> <br>
+              Product Color: <%= product.colour %> <br>
+              <span class="total" >Total: $<%= product.price%> </span><br>
+            </div>
+            <div class="col-xs-12 col-sm-6 products">
+              <%= image_tag(product.image_url, class: "img-responsive") %>
+           </div>
+          </div> <!-- end row -->
+        <%end%> <!-- end if -->
+      <%end%> <!-- end product -->
+    <%end%> <!-- end if -->
+  <%end%> <!-- end order -->
+<%end%> <!-- end user -->
 </div> <!--END CONTAINER-->
