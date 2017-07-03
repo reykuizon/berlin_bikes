@@ -4,13 +4,8 @@ class PaymentsController < ApplicationController
     @product = Product.find(params[:product_id])
     if user_signed_in?
       @user = current_user
-    else 
-      # @user = User.new(id:29) #Guest User 
-      redirect_to new_user_session_path
-    end
-    
-    token = params[:stripeToken]
-    # Create the charge on Stripe's servers - this will charge the user's car
+      token = params[:stripeToken]
+      # Create the charge on Stripe's servers - this will charge the user's car
       begin
         charge = Stripe::Charge.create(
           amount: (@product.price * 100).to_i , # amount in cents, again
@@ -30,8 +25,14 @@ class PaymentsController < ApplicationController
         body = e.json_body
         err = body[:error]
         flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
+       end
+      redirect_to @product
+    else 
+      # @user = User.new(id:29) #Guest User 
+      flash[:alert] = "Please Login to complete the transaction"
+      redirect_to new_user_session_path
     end
-    redirect_to product_path(@product)
+  
   end
-
+    
 end
