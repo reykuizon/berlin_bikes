@@ -30,8 +30,8 @@
 
 
       <%#RENDER BUY BUTTON%>
-      <%= form_tag 'payments/create' do %>
-        <%= render partial: 'shared/stripe_checkout_button'%>
+      <%= form_tag(url: '/payments/create') do |form| %>
+        <%= render partial: "shared/stripe_checkout_button" %>
       <% end %>
      
       
