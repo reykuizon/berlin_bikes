@@ -5,7 +5,8 @@ class PaymentsController < ApplicationController
     if user_signed_in?
       @user = current_user
     else 
-      @user = User.new(id:29) #Guest User 
+      # @user = User.new(id:29) #Guest User 
+      redirect_to new_user_session_path
     end
     
     token = params[:stripeToken]
@@ -30,7 +31,7 @@ class PaymentsController < ApplicationController
         err = body[:error]
         flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
     end
-    redirect_to payments_create
+    redirect_to product_path(@product)
   end
 
 end

@@ -26,8 +26,7 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
 
   <%#ELEVATEZOOM%>
   $('.img-zoom').elevateZoom({ 
-    zoomWindowFadeIn: 500, 
-    zoomWindowFadeOut: 500, 
-    lensFadeIn: 500, 
-    lensFadeOut: 500 });
+   zoomType	: "lens", 
+   lensShape : "round", 
+   lensSize : 200 });
 });

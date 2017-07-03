@@ -2,21 +2,25 @@
 <% cache product do%>
   <div class="row">
     <div class="col-xs-12 col-sm-6 products">
-      <%= image_tag(product.image_url, class: "img-responsive") %>
+      <%= image_tag(product.image_url, class: "img-responsive thumbnail") %>
     </div>  
     <div class="col-xs-12 col-sm-6 products">
-      <span class = "product_name"> <%= product.name %> </span> <br>
-      <%= product.description %> <br>
-      <%= product.colour %> <br>
-      $<%= product.price %> <br>
-      <%= link_to 'Show', product, class: "btn btn-default" %>
-
+      <span class = "product_name"> <%= product.name %> </span> <br> <br>
+      <code>Description:</code>
+      <%= product.description %> <br><br>
+      <code>Color:</code>
+      <%= product.colour %> <br><br>
+      <code>Price:</code>
+      $<%= product.price %> <br><br>
       <% if current_user && current_user.admin? %>
-        <%= link_to 'Edit', edit_product_path(product), class:"btn btn-default" %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default" %>
+        <%= link_to 'Show', product, class: "btn btn-warning" %>
+        <%= link_to 'Edit', edit_product_path(product), class:"btn btn-info" %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+      <%else%>
+        <%= link_to 'Show', product, class: "btn btn-warning" %>
       <%end%>
-    
     </div>
   </div>
+  <hr>  
 <% end %> 
   
