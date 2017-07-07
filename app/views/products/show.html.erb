@@ -3,6 +3,7 @@
 <div class="container">
   <div class="row" data-product-id="<%= @product.id %>">
     <div class="col-xs-12 col-sm-6 products">
+    
       <%#DISPLAY PRODUCT IMAGE%>
       <%= image_tag(@product.image_url, class: "img-responsive thumbnail img-zoom", data_zoom_image: @product.image_url ) %>
 

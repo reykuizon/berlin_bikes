@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :comments
 
   # VALIDATE PRODUCT NAME
-  validates :name, presence: true
+  validates :name, :description, :image_url, :colour, :price, presence: true
   # validates :description, presence: true
   # validates :image_url, presence: true
   # validates :colour, presence: true
