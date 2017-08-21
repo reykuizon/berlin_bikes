@@ -1,8 +1,10 @@
 # GUESS USER CLASS
 FactoryGirl.define do
-  # sequence(:email) { |n| "user#{n}gmail.com"}
+  sequence(:email) do |n| 
+    "user#{n}@email#{n}.com"
+  end
   factory :user do
-    email "test04@gmail.com"
+    email 
     password "password"
     first_name "Rey"
     last_name "Kuizon"
