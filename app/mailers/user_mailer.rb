@@ -1,5 +1,5 @@
-# class UserMailer < ApplicationMailer
-#   default from: 'email@berlinbikeshop.com'
+class UserMailer < ApplicationMailer
+  default from: 'email@berlinbikeshop.com'
 
 #   def contact_form(email, name, message)
 #     @message = message
@@ -9,12 +9,12 @@
       
 #   end
 
-#   # WELCOME EMAIL TO USER
-#   def welcome(user)
-#     @appname = "Berlin Bike Shop"
-#     mail(to: user.email,
-#     subject: "Welcome to #{@appname}!")
-#   end
+  # WELCOME EMAIL TO USER
+  def welcome(user)
+    @appname = "Berlin Bike Shop"
+    mail(to: user.email,
+    subject: "Welcome to #{@appname}!")
+  end
   
 #   def thank_you
 #     @name = params[:name]
@@ -23,7 +23,7 @@
 #     UserMailer.contact_form(@email, @name, @message).deliver_now
 #   end
   
-# end
+
 
 
 class UserMailer < ApplicationMailer
@@ -50,3 +50,4 @@ class UserMailer < ApplicationMailer
   end
 
 end
+
