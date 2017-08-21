@@ -10,16 +10,15 @@ describe Product do
 		product.comments.create!(rating: 5, user: user, body: "Great bike!")
 	end
 
-		
+	# TEST PRODUCT AVERAGE RATING
 	context "when the product has comments" do
-		
 		it "returns an average rating of all comments" do 
 			expect(product.average_rating).to eq 3
 		end
-
 	end
 
 
+	# PRODUCT VALIDATION TEST
 	context " validation test" do
 
 		it "is not valid without a name" do
