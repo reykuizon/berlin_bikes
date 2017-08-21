@@ -23,4 +23,31 @@ class UserMailer < ApplicationMailer
 #     UserMailer.contact_form(@email, @name, @message).deliver_now
 #   end
   
+
+
+
+class UserMailer < ApplicationMailer
+  default from: "berlinbike@example.com"
+
+  def contact_form(email, name, message)
+  @message = message
+    mail(:from => email,
+        :to => 'reykuizon83@gmail.com',
+        :subject => "A new contact form message from #{name}")
+  end
+
+  def welcome_message(user)
+    @user = user
+    mail(:to => user.email,
+         :subject => "Welcome to  Bikes Berlin!")
+  end
+
+  def successful_payment(user, product)
+    @user = user
+    @product = product
+    mail(:to => user.email,
+        :subject => "Confirmation of payment #{product.name}")
+  end
+
 end
+

@@ -1,20 +1,19 @@
 
 require 'rails_helper'
 
-describe UsersController do
-  # let(:user1){User.create!(email:"reykuizon92@gmail.com", password:"password")}
-  # let(:user2){User.create!(email:"reykuizon93@gmail.com", password:"password")}
-  
-  before do
-  @user = FactoryGirl.create(:user)
-  end
+describe UsersController , type: :controller do
   
   describe "GET #show" do
-    # LOAD STATUS 200 - @user
+    before do
+      @user = FactoryGirl.create(:user)
+    end
+
+    # USER LOGIN
     context "when a user is logged in" do
       before do
         sign_in @user
       end
+
       it "loads correct user details" do
         get :show, params: {id: @user.id}
         expect(response).to be_successful
@@ -22,28 +21,32 @@ describe UsersController do
       end
     end
 
-      # USER CANNOT SEE OTHER - USER2
-      # context "User cannot see other user page" do
-      #   before do
-      #     sign_in user2
-      #   end
-      #   it "redirect to root path" do
-      #     get :show, params: {id: user2.id}
-      #     expect(response).to redirect_to(root_path)
-      #     expect(assigns(:user)).to eq user2
-      #   end 
-      # end
-    
-    
-    # REDIRECT TO LOG IN PAGE
-    context "when a user is not logged in" do  
-        it "redirects to login" do
-        get :show, params: {id: @user.id}
-        expect(response).to redirect_to(new_user_session_url)
+
+    # USER NOT LOGIN 
+    context "when a user is not logged in" do
+      it "will redirect to new user session" do
+      get :show, params: {id: @user.id}
+      expect(response).to redirect_to(new_user_session_path)
       end
     end
 
+
+    # USER CANNOT ACCESS ANOTHER USER PAGE
+    context"when user tries to access another users account" do
+      before do
+        sign_in @user
+      end
+      
+      it "redirects to index page" do
+        @user1 =FactoryGirl.create(:user)
+        get :show, params: {id:@user1.id}
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to(root_path)
+        
+      end
+    end
   end
+
 
 end
 

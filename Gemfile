@@ -53,7 +53,7 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger consoleF
  gem 'byebug', platform: [:mri, :mingw, :x64_mingw]
 
 end
@@ -72,6 +72,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.5'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'database_cleaner'
 end
 
 group :production do
