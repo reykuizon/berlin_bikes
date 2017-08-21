@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   # validates :description, presence: true
   # validates :image_url, presence: true
   # validates :colour, presence: true
-  # validates :price, numericality: true
+  validates :price, numericality: true
 
 
   # SEARCH BOX
