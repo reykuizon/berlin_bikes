@@ -2,15 +2,15 @@
 FactoryGirl.define do
   # sequence(:email) { |n| "user#{n}gmail.com"}
   factory :user do
-    email "test03@gmail.com"
+    email "test04@gmail.com"
     password "password"
     first_name "Rey"
     last_name "Kuizon"
     admin false
   end
 
-   factory :admin do
-    email "tast03@gmail.com"
+   factory :admin, class: User do
+    email "tast13@gmail.com"
     password "password"
     first_name "Rey"
     last_name "Kuizon"
